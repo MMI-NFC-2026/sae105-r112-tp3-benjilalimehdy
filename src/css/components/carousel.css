@@ -96,3 +96,44 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
   /* Affiche l'image comme un bloc - https://developer.mozilla.org/fr/docs/Web/CSS/display */
   display: block;
 }
+
+/* *** Boutons gauche/droite placés SUR le carrousel *** */
+
+/* Le carrousel sert de repère pour les éléments en position absolue */
+.carousel {
+  position: relative;
+}
+
+/* La barre de boutons recouvre le carrousel et est centrée verticalement */
+.carousel__controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  justify-content: space-between;
+  margin: 0;
+  /* La barre laisse passer la souris (on peut toujours faire défiler les images)... */
+  pointer-events: none;
+}
+
+.carousel__button {
+  /* ...mais les boutons restent cliquables */
+  pointer-events: auto;
+  /* Fond blanc pour que le bouton reste visible sur les images */
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Cache visuellement le titre, mais le garde pour les lecteurs d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

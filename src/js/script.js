@@ -7,11 +7,15 @@ const nextButton = document.querySelector(".carousel__button--next");
 if (carousel) {
   // Scroll au clic sur le bouton précédent
   prevButton.addEventListener("click", () => {
-    carousel.scrollBy({ left: -260, behavior: "smooth" });
+    const premierItem = document.querySelector(".carousel__item");
+    const scrollAmount = premierItem.clientWidth;
+    carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   });
 
   // Scroll au clic sur le bouton suivant
   nextButton.addEventListener("click", () => {
-    carousel.scrollBy({ left: +260, behavior: "smooth" });
+    const premierItem = document.querySelector(".carousel__item");
+    const scrollAmount = premierItem.clientWidth;
+    carousel.scrollBy({ left: +scrollAmount, behavior: "smooth" });
   });
 }

@@ -64,6 +64,17 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
   margin-left: -24px;
   margin-right: -24px;
   scroll-snap-type: x mandatory;
+  /* Défilement fluide quand on clique sur une ancre */
+  scroll-behavior: smooth;
+}
+
+/* Liste de liens (ancres) vers chaque image du carrousel */
+.carousel__anchors {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
 }
 
 .carousel__item {

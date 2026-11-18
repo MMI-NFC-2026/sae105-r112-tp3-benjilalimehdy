@@ -69,8 +69,16 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
 .carousel__item {
   /* L'élément prend 1 part de l'espace disponible, ne rétrécit pas, et a une largeur de base de 260px - https://developer.mozilla.org/fr/docs/Web/CSS/flex */
   /* Aligne l'élément au centre lors du défilement - https://developer.mozilla.org/fr/docs/Web/CSS/scroll-snap-align */
-  flex: 1 0 260px;
+  /* Taille responsive : 30% de la largeur de l'écran (vw = viewport width) */
+  flex: 1 0 30vw;
   scroll-snap-align: center;
+}
+
+/* Sur petit écran (téléphone) : une image prend 80% de la largeur */
+@media (max-width: 600px) {
+  .carousel__item {
+    flex-basis: 80vw;
+  }
 }
 
 .carousel__item img {
